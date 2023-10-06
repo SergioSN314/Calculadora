@@ -4,16 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Reconocimiento de texto en una imagen con Tesseract OCR">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Calculadora.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="GUI de calculadora">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Camara.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ReconText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReconText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ReconText.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ReconText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/eng.traineddata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/And.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Booleano.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Division.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Exponenciacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ExpresionBooleana.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ExpresionConstante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Multiplicacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Not.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Or.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ReconText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Residuo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Suma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Xor.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +45,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -42,24 +57,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleso/OneDrive/Documentos/Progra/Calculadora/src/main/resources/img&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Program Files/opencv/build/java/x64",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\resources\img" />
@@ -70,6 +85,20 @@
       <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\java" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Calculadora" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,7 +107,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696557756873</updated>
-      <workItem from="1696557759404" duration="18433000" />
+      <workItem from="1696557759404" duration="18879000" />
+      <workItem from="1696624221500" duration="5475000" />
     </task>
     <task id="LOCAL-00001" summary="Union de main y master">
       <option name="closed" value="true" />
@@ -112,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696560634377</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="GUI de calculadora">
+      <option name="closed" value="true" />
+      <created>1696577582937</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696577582937</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +171,7 @@
     <MESSAGE value="Union de main y master" />
     <MESSAGE value="Configuracion de proyecto usando Maven" />
     <MESSAGE value="Reconocimiento de texto en una imagen con Tesseract OCR" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reconocimiento de texto en una imagen con Tesseract OCR" />
+    <MESSAGE value="GUI de calculadora" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI de calculadora" />
   </component>
 </project>

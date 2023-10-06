@@ -7,6 +7,7 @@ public class Calculadora extends JFrame implements ActionListener {
     final int WIDTH = 800;
     final int HEIGHT= 800;
 
+
     Font font= new Font("OCR A Extended",Font.PLAIN,30);
     JPanel panel;
 
@@ -230,8 +231,9 @@ public class Calculadora extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(bCam)){
+         if (e.getSource().equals(bCam)){
             //TODO:abrir camara
+             openCam();
         } else if (e.getSource().equals(bEqual)) {
             //TODO: enviar al servidor para calcular resultado
             output.setText("RESULTADO de :"+ input.getText());
@@ -254,5 +256,20 @@ public class Calculadora extends JFrame implements ActionListener {
             JButton btn = (JButton) e.getSource();
             input.setText(input.getText().concat(btn.getText()));
         }
+    }
+
+    private void openCam() {
+
+        Camara camara= new  Camara();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    camara.startCam();
+                }catch (Exception ignored){}
+
+            }
+        }).start();
+
     }
 }
