@@ -4,33 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Union de main y master">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Calculadora.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/And.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/And.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Booleano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Booleano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Constante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Division.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exponenciacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exponenciacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExpresionBooleana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExpresionBooleana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExpresionConstante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExpresionConstante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Multiplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Multiplicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Not.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Not.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Or.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Or.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Residuo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Residuo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Suma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Suma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Xor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Xor.java" afterDir="false" />
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Reconocimiento de texto en una imagen con Tesseract OCR">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,20 +38,26 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/aleso/OneDrive/Documentos/Progra/Calculadora/tessdata",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\tessdata" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\resources" />
       <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\java" />
     </key>
   </component>
@@ -76,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696557756873</updated>
-      <workItem from="1696557759404" duration="446000" />
+      <workItem from="1696557759404" duration="2741000" />
     </task>
     <task id="LOCAL-00001" summary="Union de main y master">
       <option name="closed" value="true" />
@@ -86,7 +79,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696557863639</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Configuracion de proyecto usando Maven">
+      <option name="closed" value="true" />
+      <created>1696558351962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696558351962</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Reconocimiento de texto en una imagen con Tesseract OCR">
+      <option name="closed" value="true" />
+      <created>1696560390335</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696560390335</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +103,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Union de main y master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Union de main y master" />
+    <MESSAGE value="Configuracion de proyecto usando Maven" />
+    <MESSAGE value="Reconocimiento de texto en una imagen con Tesseract OCR" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reconocimiento de texto en una imagen con Tesseract OCR" />
   </component>
 </project>
