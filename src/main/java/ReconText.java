@@ -11,7 +11,6 @@ public class ReconText {
             System.out.println(e.getMessage());
         }
     }
-
     public String getText() {
         return text;
     }
