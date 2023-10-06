@@ -4,48 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3546c3-d3be-45f2-8f1f-59ae63a57d91" name="Changes" comment="Primer Commit, creacion del Repositorio y clase principal">
-      <change afterPath="$PROJECT_DIR$/src/And.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Booleano.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Calculadora.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Constante.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Division.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exponenciacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ExpresionBooleana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ExpresionConstante.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Multiplicacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Not.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Or.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Residuo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Resta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servidor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Suma.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Xor.java" afterDir="false" />
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Union de main y master">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Calculadora.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/And.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/And.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Booleano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Booleano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Constante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Division.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exponenciacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exponenciacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExpresionBooleana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExpresionBooleana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExpresionConstante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExpresionConstante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Multiplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Multiplicacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Not.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Not.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Or.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Or.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Residuo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Residuo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Suma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Suma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Xor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Xor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
   "associatedIndex": 5
 }]]></component>
-  <component name="ProjectId" id="2WGkjiSFCUuEIaEl50ABPAEmYLK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2WN0Vb1lemSKuUb8SjQiSdfBHpC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,42 +51,49 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\java" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8c3546c3-d3be-45f2-8f1f-59ae63a57d91" name="Changes" comment="" />
-      <created>1696366450081</created>
+      <changelist id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="" />
+      <created>1696557756873</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1696366450081</updated>
+      <updated>1696557756873</updated>
+      <workItem from="1696557759404" duration="446000" />
     </task>
-    <task id="LOCAL-00001" summary="Primer Commit, creacion del Repositorio y clase principal">
+    <task id="LOCAL-00001" summary="Union de main y master">
       <option name="closed" value="true" />
-      <created>1696366817681</created>
+      <created>1696557863639</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1696366817681</updated>
+      <updated>1696557863639</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Primer Commit, creacion del Repositorio y clase principal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primer Commit, creacion del Repositorio y clase principal" />
+    <MESSAGE value="Union de main y master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Union de main y master" />
   </component>
 </project>
