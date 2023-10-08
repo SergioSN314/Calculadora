@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 
 public class Camara extends JFrame implements ActionListener {
 
@@ -64,9 +65,13 @@ public class Camara extends JFrame implements ActionListener {
             camaraScreen.setIcon(icon);
 
             if (clicked){
-                //TODO: toma la foto
+                Imgcodecs.imwrite("src\\main\\resources\\img\\op.jpg",image);
+                this.dispose();
                 clicked=false;
+                //return new File("\"src\\\\main\\\\resources\\\\img\\\\op.jpg\"");
             }
+
+
 
         }
     }

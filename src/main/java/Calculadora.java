@@ -2,11 +2,24 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
-public class Calculadora extends JFrame implements ActionListener {
+public class Calculadora extends JFrame implements ActionListener,Runnable {
     final int WIDTH = 800;
     final int HEIGHT= 800;
-
+    private String clientIp;
+    public static String serverIp = "192.168.1.72";
+    public static int serverPort = 9999;
+    protected Socket enviarSolicitud;
+    protected ObjectOutputStream envio;
+    protected ServerSocket recibirRespuesta;
+    protected Socket rRespuesta;
+    protected ObjectInputStream entrada;
+    Thread hiloCamara;
 
     Font font= new Font("OCR A Extended",Font.PLAIN,30);
     JPanel panel;
@@ -17,8 +30,25 @@ public class Calculadora extends JFrame implements ActionListener {
     JTextField input;
     JLabel output;
 
+    public static void main(String[] args) {
+        new Calculadora();
+    }
     Calculadora(){
 
+        InetAddress localHost;
+        try {
+            localHost = InetAddress.getLocalHost();
+            this.clientIp = (localHost.getHostAddress());
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        try {
+            enviarSolicitud= new Socket(serverIp,serverPort);
+            envio = new ObjectOutputStream(enviarSolicitud.getOutputStream());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Calculadora");
         this.setSize(WIDTH, HEIGHT);
@@ -218,7 +248,8 @@ public class Calculadora extends JFrame implements ActionListener {
         this.pack();
         this.setVisible(true);
 
-
+        Thread hilo = new Thread(this);
+        hilo.start();
 
         /*System.out.println("Calculadora");
 
@@ -232,11 +263,23 @@ public class Calculadora extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
          if (e.getSource().equals(bCam)){
-            //TODO:abrir camara
              openCam();
+             hiloCamara.start();
+             Solicitud solicitud=new Solicitud(clientIp,new File("src\\main\\resources\\img\\op.jpg"));
+             try {
+                 envio.writeObject(solicitud);
+             } catch (IOException ex) {
+                 throw new RuntimeException(ex);
+             }
         } else if (e.getSource().equals(bEqual)) {
-            //TODO: enviar al servidor para calcular resultado
-            output.setText("RESULTADO de :"+ input.getText());
+             Solicitud solicitud=new Solicitud(clientIp,input.getText());
+             try {
+                 envio.writeObject(solicitud);
+             } catch (IOException ex) {
+                 throw new RuntimeException(ex);
+             }
+
+             //output.setText("RESULTADO de :"+ input.getText());
         } else if (e.getSource().equals(bDel)) {
             input.setText(input.getText().substring(0,input.getText().length()-1));
         } else if (e.getSource().equals(bClr)) {
@@ -261,7 +304,7 @@ public class Calculadora extends JFrame implements ActionListener {
     private void openCam() {
 
         Camara camara= new  Camara();
-        new Thread(new Runnable() {
+        hiloCamara = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -269,7 +312,24 @@ public class Calculadora extends JFrame implements ActionListener {
                 }catch (Exception ignored){}
 
             }
-        }).start();
+        });
+    }
+    @Override
+    public void run() {
+        try {
+            recibirRespuesta = new ServerSocket(9090);
+            while (true){
+                rRespuesta=recibirRespuesta.accept();
+                entrada= new ObjectInputStream(rRespuesta.getInputStream());
+                Respuesta respuesta=(Respuesta) entrada.readObject();
 
+                input.setText(respuesta.getOp());
+                output.setText(respuesta.getResp());
+                rRespuesta.close();
+            }
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
