@@ -1,9 +1,17 @@
+import org.apache.commons.io.input.ObservableInputStream;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Calculadora extends JFrame implements ActionListener {
+public class Calculadora extends JFrame implements ActionListener, Observer {
+
+
+
+
     final int WIDTH = 800;
     final int HEIGHT= 800;
 
@@ -18,6 +26,10 @@ public class Calculadora extends JFrame implements ActionListener {
     JLabel output;
 
     Calculadora(){
+        Servidor s = new Servidor(6000);
+        s.addObserver(this);
+        Thread t = new Thread(s);
+        t.start();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Calculadora");
@@ -229,6 +241,7 @@ public class Calculadora extends JFrame implements ActionListener {
     }
 
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
          if (e.getSource().equals(bCam)){
@@ -270,6 +283,11 @@ public class Calculadora extends JFrame implements ActionListener {
 
             }
         }).start();
+
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
 
     }
 }
