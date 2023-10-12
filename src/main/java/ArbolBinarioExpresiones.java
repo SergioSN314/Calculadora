@@ -20,22 +20,6 @@ public class ArbolBinarioExpresiones {
     public boolean arbolVacio(){
         return raiz==null;
     }
-    private String preorden(NodoArbol subArbol, String c){
-        String cadena;
-        cadena="";
-        if (subArbol !=null){
-            cadena = c + subArbol.dato.toString()+"\n"+preorden(subArbol.izquierdo,c)+preorden(subArbol.derecho,c);
-        }
-        return cadena;
-    }
-    private String inorden(NodoArbol subArbol, String c) {
-        String cadena;
-        cadena = "";
-        if (subArbol != null) {
-            cadena = c + inorden(subArbol.izquierdo, c) + subArbol.dato.toString() + "\n" + inorden(subArbol.derecho, c);
-        }
-        return cadena;
-    }
     private String posorden(NodoArbol subArbol, String c) {
         String cadena;
         cadena = "";
@@ -44,19 +28,9 @@ public class ArbolBinarioExpresiones {
         }
         return cadena;
     }
-    public String toString(int a){
+    public String Formatoposfijo(){
         String cadena="";
-        switch (a){
-            case 0:
-                cadena=preorden(raiz,cadena);
-                break;
-            case 1:
-                cadena= inorden(raiz,cadena);
-                break;
-            case 2:
-                cadena = posorden(raiz,cadena);
-                break;
-        }
+        cadena = posorden(raiz,cadena);
         return cadena;
     }
     private int prioridad(char c){
@@ -108,7 +82,6 @@ public class ArbolBinarioExpresiones {
         return resultado;
     }
 
-
     private String numerocompleto(String cadena, int pos){
         String Numerocompleto="";
         char caracterEvaluado;
@@ -155,7 +128,7 @@ public class ArbolBinarioExpresiones {
                             op2=Output_Queue.quitar();
                             op1=Output_Queue.quitar();
                             op =Stack.quitar();
-                            System.out.println(op2);
+
                             op=creaSubArbol(op2,op1,op);
                             Output_Queue.insertar(op);
                         }
@@ -187,9 +160,7 @@ public class ArbolBinarioExpresiones {
     public double EvaluaExpresion(){
         return evalua(raiz);
     }
-    public boolean EvaluaExpresionBoolean(){
-        return evaluabooleano(raiz);
-    }
+
     private double evalua(NodoArbol subArbol){
         double acum=0;
         if(!esOperador(subArbol.dato.toString().charAt(0))){
@@ -209,47 +180,39 @@ public class ArbolBinarioExpresiones {
                     acum = acum + evalua(subArbol.izquierdo) + evalua(subArbol.derecho);
                     break;
                 case '-':
-                    acum = acum + evalua(subArbol.izquierdo) - evalua(subArbol.derecho);
+                    if (subArbol.izquierdo==null){
+                        acum = -evalua(subArbol.derecho);
+                    }else{
+                        acum = acum + evalua(subArbol.izquierdo)-evalua(subArbol.derecho);
+                    }
+                    break;
+                case '~':
+                    if (subArbol.izquierdo==null){
+                        acum = acum+(~(int)evalua(subArbol.derecho));
+                    }else{
+                        acum = acum + evalua(subArbol.izquierdo)*(~(int)evalua(subArbol.derecho));
+                    }
+
                     break;
                 case '%':
                     acum = acum + evalua(subArbol.izquierdo) % evalua(subArbol.derecho);
                     break;
-                case '&':
-                    acum = acum + evalua(subArbol.izquierdo) - evalua(subArbol.derecho);
-                    break;
-            }
 
-        }
-        return acum;
-    }
-    private boolean evaluabooleano(NodoArbol subArbol){
-        boolean acum=true;
-        if(!esOperador(subArbol.dato.toString().charAt(0))){
-            switch ((subArbol.dato.toString().charAt(0))) {
-                case 'T':
-                    return true;
-
-                case 'F':
-                    return false;
-            }
-        }else {
-            switch ((subArbol.dato.toString().charAt(0))) {
-                case '~':
-                    acum = acum&(!evaluabooleano(subArbol.derecho));
-                    break;
                 case '&':
-                    acum =  acum&(evaluabooleano(subArbol.izquierdo) && evaluabooleano(subArbol.derecho));
+                    acum = acum + ((int)evalua(subArbol.izquierdo) & (int)evalua(subArbol.derecho));
                     break;
                 case '|':
-                    acum = acum&(evaluabooleano(subArbol.izquierdo) || evaluabooleano(subArbol.derecho));
+                    acum = acum + ((int)evalua(subArbol.izquierdo) | (int)evalua(subArbol.derecho));
                     break;
                 case 'x':
-                    acum = acum&(evaluabooleano(subArbol.izquierdo) ^ evaluabooleano(subArbol.derecho));
+                    acum = acum + ((int)evalua(subArbol.izquierdo) ^ (int)evalua(subArbol.derecho));
                     break;
             }
+
         }
         return acum;
     }
 
 }
+
 

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Calculadora extends JFrame implements ActionListener, Observer {
+public class Calculadora extends JFrame implements ActionListener {
 
 
 
@@ -26,10 +26,6 @@ public class Calculadora extends JFrame implements ActionListener, Observer {
     JLabel output;
 
     Calculadora(){
-        Servidor s = new Servidor(6000);
-        s.addObserver(this);
-        Thread t = new Thread(s);
-        t.start();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Calculadora");
@@ -286,8 +282,4 @@ public class Calculadora extends JFrame implements ActionListener, Observer {
 
     }
 
-    @Override
-    public void update(Observable o, Object arg) {
-
-    }
 }

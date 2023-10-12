@@ -4,40 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Reconocimiento de texto en una imagen con Tesseract OCR">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Calculadora2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NodoArbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NodoPila.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PilaArbolExp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_10_2023_20_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_10_2023_20_52__Changes_.xml" afterDir="false" />
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/And.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Booleano.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Camara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Camara.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Constante.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Division.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exponenciacion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExpresionBooleana.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExpresionConstante.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Multiplicacion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Not.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Or.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Residuo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Resta.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Suma.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Xor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/And.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Booleano.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Calculadora$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Camara$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Camara.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Constante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Constante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Division.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Exponenciacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ExpresionBooleana.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ExpresionConstante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Multiplicacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Not.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Or.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Residuo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Resta.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Suma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Xor.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696560634377</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto">
+      <option name="closed" value="true" />
+      <created>1696964228706</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696964228706</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +168,7 @@
     <MESSAGE value="Union de main y master" />
     <MESSAGE value="Configuracion de proyecto usando Maven" />
     <MESSAGE value="Reconocimiento de texto en una imagen con Tesseract OCR" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reconocimiento de texto en una imagen con Tesseract OCR" />
+    <MESSAGE value="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto" />
   </component>
 </project>
