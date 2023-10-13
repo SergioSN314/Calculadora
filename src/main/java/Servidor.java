@@ -1,4 +1,3 @@
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,19 +15,6 @@ public class Servidor implements Runnable{
 
 
     public static void main(String[] args) {
-        ExpresionConstante expresion = new Exponenciacion(new Constante(4.0), new Constante(3.0));
-        ExpresionBooleana expresion2 = new Xor(new Booleano(true), new Booleano(true));
-        ExpresionBooleana expresion3 = new Not(new Booleano(false));
-
-        double resultado = expresion.evaluar();
-        boolean resultado2 = expresion2.evaluar();
-        boolean resultado3 = expresion3.evaluar();
-
-
-        System.out.println("Resultado: " + resultado);
-        System.out.println("Resultado: " + resultado2);
-        System.out.println("Resultado: " + resultado3);
-
         new Servidor();
     }
 
@@ -52,6 +38,7 @@ public class Servidor implements Runnable{
             try {
                 Respuesta respuesta = null;
                 solicitud = (Solicitud) entrada.readObject();
+                System.out.println(solicitud.getImg());
                 if (solicitud.getImg()==null){
                     //TODO: Evaluar expresion escrita
                     System.out.println(solicitud.getIp() + " solicita: "+ solicitud.getOp());

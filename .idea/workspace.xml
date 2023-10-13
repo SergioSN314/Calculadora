@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Implementación de la camara usando OpenCV 4.8.0">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Respuesta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Solicitud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Camara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Camara.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ReconText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReconText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Calculadora$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Camara$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Camara.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ReconText.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ReconText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +31,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/Calculadora.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -120,7 +118,10 @@
       <updated>1696557756873</updated>
       <workItem from="1696557759404" duration="18879000" />
       <workItem from="1696624221500" duration="5845000" />
-      <workItem from="1696718463036" duration="10282000" />
+      <workItem from="1696718463036" duration="10452000" />
+      <workItem from="1696882304192" duration="979000" />
+      <workItem from="1697133139285" duration="7062000" />
+      <workItem from="1697151581882" duration="7292000" />
     </task>
     <task id="LOCAL-00001" summary="Union de main y master">
       <option name="closed" value="true" />
@@ -178,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696629906446</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos">
+      <option name="closed" value="true" />
+      <created>1696730622418</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696730622418</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +210,7 @@
     <MESSAGE value="Reconocimiento de texto en una imagen con Tesseract OCR" />
     <MESSAGE value="GUI de calculadora" />
     <MESSAGE value="Implementación de la camara usando OpenCV 4.8.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementación de la camara usando OpenCV 4.8.0" />
+    <MESSAGE value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
   </component>
 </project>

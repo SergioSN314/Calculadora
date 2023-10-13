@@ -19,7 +19,6 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
     protected ServerSocket recibirRespuesta;
     protected Socket rRespuesta;
     protected ObjectInputStream entrada;
-    Thread hiloCamara;
 
     Font font= new Font("OCR A Extended",Font.PLAIN,30);
     JPanel panel;
@@ -29,12 +28,12 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
     JButton bPlus, bMinus, bEqual, bMult, bDiv, bMod, bExp, bAnd, bOr, bXOr, bNot, bCam,bOpenPar,bClosePar,bLeft,bRight, bClr, bDel;
     JTextField input;
     JLabel output;
+    Camara camara;
 
     public static void main(String[] args) {
         new Calculadora();
     }
     Calculadora(){
-
         InetAddress localHost;
         try {
             localHost = InetAddress.getLocalHost();
@@ -62,8 +61,6 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
         input.setBackground(Color.WHITE);
         input.setFont(font);
         input.setEditable(false);
-//        input.setText("INPUT");
-
 
         output=new JLabel();
         output.setPreferredSize(new Dimension(WIDTH,80));
@@ -71,7 +68,6 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
         output.setFont(font);
         output.setBackground(Color.DARK_GRAY);
         output.setForeground(Color.WHITE);
-//        output.setText("OUTPUT");
 
         GridBagConstraints gbc =new GridBagConstraints();
 
@@ -250,27 +246,33 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
 
         Thread hilo = new Thread(this);
         hilo.start();
-
-        /*System.out.println("Calculadora");
-
-        File image = new File("src/main/resources/img/op.png");
-        ReconText reconText = new  ReconText(image);
-        System.out.println(reconText.getText());*/
-
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
          if (e.getSource().equals(bCam)){
-             openCam();
-             hiloCamara.start();
-             Solicitud solicitud=new Solicitud(clientIp,new File("src\\main\\resources\\img\\op.jpg"));
-             try {
-                 envio.writeObject(solicitud);
-             } catch (IOException ex) {
-                 throw new RuntimeException(ex);
-             }
+             camara= new  Camara(serverIp,serverPort,clientIp);
+             Thread espera= new  Thread(new Runnable() {
+                 @Override
+                 public void run() {
+                     while (true){
+                         if (camara.camThread.isInterrupted()){
+                             Solicitud solicitud=new Solicitud(clientIp,camara.foto);
+                             try {
+                                 envio.writeObject(solicitud);
+                             } catch (IOException ex) {
+                                 throw new RuntimeException(ex);
+                             }
+                             break;
+                         }
+                     }
+
+
+                 }
+             });
+             espera.start();
+
         } else if (e.getSource().equals(bEqual)) {
              Solicitud solicitud=new Solicitud(clientIp,input.getText());
              try {
@@ -278,8 +280,6 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
              } catch (IOException ex) {
                  throw new RuntimeException(ex);
              }
-
-             //output.setText("RESULTADO de :"+ input.getText());
         } else if (e.getSource().equals(bDel)) {
             input.setText(input.getText().substring(0,input.getText().length()-1));
         } else if (e.getSource().equals(bClr)) {
@@ -300,28 +300,14 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
             input.setText(input.getText().concat(btn.getText()));
         }
     }
-
-    private void openCam() {
-
-        Camara camara= new  Camara();
-        hiloCamara = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    camara.startCam();
-                }catch (Exception ignored){}
-
-            }
-        });
-    }
     @Override
     public void run() {
         try {
             recibirRespuesta = new ServerSocket(9090);
-            while (true){
-                rRespuesta=recibirRespuesta.accept();
-                entrada= new ObjectInputStream(rRespuesta.getInputStream());
-                Respuesta respuesta=(Respuesta) entrada.readObject();
+            while (true) {
+                rRespuesta = recibirRespuesta.accept();
+                entrada = new ObjectInputStream(rRespuesta.getInputStream());
+                Respuesta respuesta = (Respuesta) entrada.readObject();
 
                 input.setText(respuesta.getOp());
                 output.setText(respuesta.getResp());
