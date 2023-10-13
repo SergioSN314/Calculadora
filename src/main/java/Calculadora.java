@@ -4,17 +4,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Observable;
-import java.util.Observer;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
-public class Calculadora extends JFrame implements ActionListener {
-
-
-
-
+public class Calculadora extends JFrame implements ActionListener,Runnable {
     final int WIDTH = 800;
     final int HEIGHT= 800;
-
+    private String clientIp;
+    public static String serverIp = "192.168.1.72";
+    public static int serverPort = 9999;
+    protected Socket enviarSolicitud;
+    protected ObjectOutputStream envio;
+    protected ServerSocket recibirRespuesta;
+    protected Socket rRespuesta;
+    protected ObjectInputStream entrada;
 
     Font font= new Font("OCR A Extended",Font.PLAIN,30);
     JPanel panel;
@@ -24,9 +30,26 @@ public class Calculadora extends JFrame implements ActionListener {
     JButton bPlus, bMinus, bEqual, bMult, bDiv, bMod, bExp, bAnd, bOr, bXOr, bNot, bCam,bOpenPar,bClosePar,bLeft,bRight, bClr, bDel;
     JTextField input;
     JLabel output;
+    Camara camara;
 
+    public static void main(String[] args) {
+        new Calculadora();
+    }
     Calculadora(){
+        InetAddress localHost;
+        try {
+            localHost = InetAddress.getLocalHost();
+            this.clientIp = (localHost.getHostAddress());
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        try {
+            enviarSolicitud= new Socket(serverIp,serverPort);
+            envio = new ObjectOutputStream(enviarSolicitud.getOutputStream());
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Calculadora");
         this.setSize(WIDTH, HEIGHT);
@@ -40,8 +63,6 @@ public class Calculadora extends JFrame implements ActionListener {
         input.setBackground(Color.WHITE);
         input.setFont(font);
         input.setEditable(false);
-//        input.setText("INPUT");
-
 
         output=new JLabel();
         output.setPreferredSize(new Dimension(WIDTH,80));
@@ -49,7 +70,6 @@ public class Calculadora extends JFrame implements ActionListener {
         output.setFont(font);
         output.setBackground(Color.DARK_GRAY);
         output.setForeground(Color.WHITE);
-//        output.setText("OUTPUT");
 
         GridBagConstraints gbc =new GridBagConstraints();
 
@@ -226,14 +246,8 @@ public class Calculadora extends JFrame implements ActionListener {
         this.pack();
         this.setVisible(true);
 
-
-
-        /*System.out.println("Calculadora");
-
-        File image = new File("src/main/resources/img/op.png");
-        ReconText reconText = new  ReconText(image);
-        System.out.println(reconText.getText());*/
-
+        Thread hilo = new Thread(this);
+        hilo.start();
     }
 
 
@@ -241,11 +255,34 @@ public class Calculadora extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
          if (e.getSource().equals(bCam)){
-            //TODO:abrir camara
-             openCam();
+             camara= new  Camara(serverIp,serverPort,clientIp);
+             Thread espera= new  Thread(new Runnable() {
+                 @Override
+                 public void run() {
+                     while (true){
+                         if (camara.camThread.isInterrupted()){
+                             Solicitud solicitud=new Solicitud(clientIp,camara.foto);
+                             try {
+                                 envio.writeObject(solicitud);
+                             } catch (IOException ex) {
+                                 throw new RuntimeException(ex);
+                             }
+                             break;
+                         }
+                     }
+
+
+                 }
+             });
+             espera.start();
+
         } else if (e.getSource().equals(bEqual)) {
-            //TODO: enviar al servidor para calcular resultado
-            output.setText("RESULTADO de :"+ input.getText());
+             Solicitud solicitud=new Solicitud(clientIp,input.getText());
+             try {
+                 envio.writeObject(solicitud);
+             } catch (IOException ex) {
+                 throw new RuntimeException(ex);
+             }
         } else if (e.getSource().equals(bDel)) {
             input.setText(input.getText().substring(0,input.getText().length()-1));
         } else if (e.getSource().equals(bClr)) {
@@ -266,20 +303,23 @@ public class Calculadora extends JFrame implements ActionListener {
             input.setText(input.getText().concat(btn.getText()));
         }
     }
+    @Override
+    public void run() {
+        try {
+            recibirRespuesta = new ServerSocket(9090);
+            while (true) {
+                rRespuesta = recibirRespuesta.accept();
+                entrada = new ObjectInputStream(rRespuesta.getInputStream());
+                Respuesta respuesta = (Respuesta) entrada.readObject();
 
-    private void openCam() {
-
-        Camara camara= new  Camara();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    camara.startCam();
-                }catch (Exception ignored){}
-
+                input.setText(respuesta.getOp());
+                output.setText(respuesta.getResp());
+                rRespuesta.close();
             }
-        }).start();
 
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto">
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
@@ -26,6 +27,15 @@
       <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Suma.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Xor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Camara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Camara.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Camara$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Camara.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +65,8 @@
         <option name="url" value="https://github.com/SergioSN314/Calculadora.git" />
       </UrlAndAccount>
     </option>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/Calculadora.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,6 +88,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sergi/IdeaProjects/Prueba&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/opencv/build/java/x64&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -97,6 +110,36 @@
       <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\java" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.Calculadora">
+    <configuration name="Calculadora" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Calculadora" />
+      <module name="Calculadora" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReconText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReconText" />
+      <module name="Calculadora" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <module name="Calculadora" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Calculadora" />
+        <item itemvalue="Application.Servidor" />
+        <item itemvalue="Application.ReconText" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -105,7 +148,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696557756873</updated>
-      <workItem from="1696557759404" duration="18433000" />
+      <workItem from="1696557759404" duration="18879000" />
+      <workItem from="1696624221500" duration="5845000" />
+      <workItem from="1696718463036" duration="10452000" />
+      <workItem from="1696882304192" duration="979000" />
+      <workItem from="1697133139285" duration="7062000" />
+      <workItem from="1697151581882" duration="7292000" />
     </task>
     <task id="LOCAL-00001" summary="Union de main y master">
       <option name="closed" value="true" />
@@ -147,7 +195,31 @@
       <option name="project" value="LOCAL" />
       <updated>1696964228706</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implementación de la camara usando OpenCV 4.8.0">
+      <option name="closed" value="true" />
+      <created>1696629810790</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696629810790</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implementación de la camara usando OpenCV 4.8.0">
+      <option name="closed" value="true" />
+      <created>1696629906446</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696629906446</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos">
+      <option name="closed" value="true" />
+      <created>1696730622418</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696730622418</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,5 +242,9 @@
     <MESSAGE value="Reconocimiento de texto en una imagen con Tesseract OCR" />
     <MESSAGE value="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto" />
     <option name="LAST_COMMIT_MESSAGE" value="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto" />
+    <MESSAGE value="GUI de calculadora" />
+    <MESSAGE value="Implementación de la camara usando OpenCV 4.8.0" />
+    <MESSAGE value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
   </component>
 </project>

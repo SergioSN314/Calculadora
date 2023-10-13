@@ -10,72 +10,100 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 
-public class Camara extends JFrame implements ActionListener {
-
+public class Camara extends JFrame implements ActionListener,Runnable {
     JLabel camaraScreen;
     JButton captura;
 
+    final int WIDTH=650;
+    final int HEIGHT=600;
+    static {
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+    }
 
-    static {System.loadLibrary(Core.NATIVE_LIBRARY_NAME);}
-
-    boolean clicked =false;
-
+    boolean clicked = false;
     VideoCapture video;
     Mat image;
+    public File foto;
+    String serverIp, clientIp;
+    int serverPort;
+    public Thread camThread;
 
-    public Camara(){
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setTitle("Camara");
-        this.setLayout(null);
-        this.setSize(500, 500);
-        this.setVisible(true);
-        System.out.println(Core.VERSION);
-
-        camaraScreen=new JLabel();
-        camaraScreen.setBounds(0,0,500,400);
-        this.add(camaraScreen);
-
-        captura= new JButton("Capturar");
-        captura.setBounds(200,400,100,50);
-        captura.addActionListener(this);
-        this.add(captura);
-
+    public Camara(String serverIp, int serverPort, String clientIp) {
+        camThread = new Thread(this);
+        camThread.start();
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-                video.release();
-                image.release();
+                try {
+                    super.windowClosing(e);
+                    video.release();
+                    image.release();
+                } catch (Exception ignored) {
+                }
             }
         });
+        this.foto = null;
+        this.serverIp = serverIp;
+        this.clientIp = clientIp;
+        this.serverPort = serverPort;
 
     }
-    public void startCam(){
-        video=new VideoCapture(0);
-        image=new Mat();
+    @Override
+    public void run() {
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setTitle("Camara");
+        this.setLayout(null);
+        this.setSize(WIDTH, HEIGHT);
+        this.setVisible(true);
+        System.out.println(Core.VERSION);
+
+        camaraScreen = new JLabel();
+        camaraScreen.setBounds(0, 0, WIDTH, HEIGHT-100);
+        this.add(camaraScreen);
+
+        captura = new JButton("Capturar");
+        captura.setBounds((WIDTH/2)-100, HEIGHT-100, 100, 50);
+        captura.addActionListener(this);
+        this.add(captura);
+
+        video = new VideoCapture(0);
+        image = new Mat();
         byte[] imageData;
         ImageIcon icon;
-        while (true){
+        while (true) {
             video.read(image);
             final MatOfByte buf = new MatOfByte();
-            Imgcodecs.imencode(".jpg",image,buf);
-            imageData= buf.toArray();
-            icon=new ImageIcon(imageData);
+            Imgcodecs.imencode(".jpg", image, buf);
+            imageData = buf.toArray();
+            icon = new ImageIcon(imageData);
             camaraScreen.setIcon(icon);
+            if (clicked) {
+                Imgcodecs.imwrite("src\\main\\resources\\img\\op.jpg", image);
+                clicked = false;
+                int ans = JOptionPane.showConfirmDialog(this, "Desea enviar la foto?", "Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+                if (ans == 0) {
 
-            if (clicked){
-                //TODO: toma la foto
-                clicked=false;
+                    this.foto = new File("src\\main\\resources\\img\\op.jpg");
+                    this.dispose();
+                    this.camThread.interrupt();
+
+
+                } else if (ans == 1) {
+                    System.out.println("Cancelar");
+                }
             }
 
         }
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource().equals(captura)){
-            clicked=true;
+        if (e.getSource().equals(captura)) {
+            clicked = true;
         }
-
     }
 }
+
+
