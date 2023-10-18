@@ -1,6 +1,6 @@
-import org.apache.commons.io.input.ObservableInputStream;
-
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +11,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Calculadora extends JFrame implements ActionListener,Runnable {
-    final int WIDTH = 800;
+    final int WIDTH = 1200;
     final int HEIGHT= 800;
     private String clientIp;
     public static String serverIp = "192.168.1.72";
@@ -21,20 +21,18 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
     protected ServerSocket recibirRespuesta;
     protected Socket rRespuesta;
     protected ObjectInputStream entrada;
-
     Font font= new Font("OCR A Extended",Font.PLAIN,30);
-    JPanel panel;
-
+    JPanel panel,historyPanel;
     JButton[] Buttons = new JButton[28];
     JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
     JButton bPlus, bMinus, bEqual, bMult, bDiv, bMod, bExp, bAnd, bOr, bXOr, bNot, bCam,bOpenPar,bClosePar,bLeft,bRight, bClr, bDel;
     JTextField input;
-    JLabel output;
+    JLabel output,historyLablel;
+    JList<Respuesta> history;
+    DefaultListModel<Respuesta> listModel;
+    JScrollPane historyScroll;
     Camara camara;
-
-    public static void main(String[] args) {
-        new Calculadora();
-    }
+    public static void main(String[] args) {new Calculadora();}
     Calculadora(){
         InetAddress localHost;
         try {
@@ -53,9 +51,11 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Calculadora");
         this.setSize(WIDTH, HEIGHT);
+        this.setLayout(new BorderLayout());
+        this.setResizable(false);
 
         panel = new JPanel(new GridBagLayout());
-        panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        panel.setPreferredSize(new Dimension(WIDTH-400, HEIGHT));
         panel.setBackground(Color.black);
 
         input= new JTextField();
@@ -77,64 +77,63 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
         gbc.weighty=1;
         gbc.fill=GridBagConstraints.BOTH;
 
-
-        b0=new JButton("0");
-        b1=new JButton("1");
-        b2=new JButton("2");
-        b3=new JButton("3");
-        b4=new JButton("4");
-        b5=new JButton("5");
-        b6=new JButton("6");
-        b7=new JButton("7");
-        b8=new JButton("8");
-        b9=new JButton("9");
-        bEqual =new JButton("=");
-        bPlus =new JButton("+");
-        bMinus =new JButton("-");
-        bMult =new JButton("*");
-        bDiv =new JButton("/");
-        bMod =new JButton("%");
-        bExp =new JButton("**");
-        bAnd =new JButton("&");
-        bOr =new JButton("|");
-        bXOr =new JButton("^");
+        b0 = new JButton("0");
+        b1 = new JButton("1");
+        b2 = new JButton("2");
+        b3 = new JButton("3");
+        b4 = new JButton("4");
+        b5 = new JButton("5");
+        b6 = new JButton("6");
+        b7 = new JButton("7");
+        b8 = new JButton("8");
+        b9 = new JButton("9");
+        bEqual = new JButton("=");
+        bPlus = new JButton("+");
+        bMinus = new JButton("-");
+        bMult = new JButton("*");
+        bDiv = new JButton("/");
+        bMod = new JButton("%");
+        bExp = new JButton("**");
+        bAnd = new JButton("&");
+        bOr = new JButton("|");
+        bXOr = new JButton("^");
         bNot = new JButton("~");
-        bOpenPar =new JButton("(");
-        bClosePar =new JButton(")");
-        bLeft =new JButton("<-");
-        bRight=new JButton("->");
-        bCam =new JButton("Cam");
+        bOpenPar = new JButton("(");
+        bClosePar = new JButton(")");
+        bLeft = new JButton("<-");
+        bRight= new JButton("->");
+        bCam = new JButton("Cam");
         bClr = new JButton("Clr");
         bDel = new JButton("Del");
 
-        Buttons[0]=b0;
-        Buttons[1]=b1;
-        Buttons[2]=b2;
-        Buttons[3]=b3;
-        Buttons[4]=b4;
-        Buttons[5]=b5;
-        Buttons[6]=b6;
-        Buttons[7]=b7;
-        Buttons[8]=b8;
-        Buttons[9]=b9;
-        Buttons[10]=bEqual;
-        Buttons[11]=bPlus;
-        Buttons[12]=bMinus;
-        Buttons[13]=bMult;
-        Buttons[14]=bDiv;
-        Buttons[15]=bMod;
-        Buttons[16]=bExp;
-        Buttons[17]=bAnd;
-        Buttons[18]=bOr;
-        Buttons[19]=bXOr;
-        Buttons[20]=bNot;
-        Buttons[21]=bOpenPar;
-        Buttons[22]=bClosePar;
-        Buttons[23]=bLeft;
-        Buttons[24]=bRight;
-        Buttons[25]=bCam;
-        Buttons[26]=bClr;
-        Buttons[27]=bDel;
+        Buttons[0] = b0;
+        Buttons[1] = b1;
+        Buttons[2] = b2;
+        Buttons[3] = b3;
+        Buttons[4] = b4;
+        Buttons[5] = b5;
+        Buttons[6] = b6;
+        Buttons[7] = b7;
+        Buttons[8] = b8;
+        Buttons[9] = b9;
+        Buttons[10] = bEqual;
+        Buttons[11] = bPlus;
+        Buttons[12] = bMinus;
+        Buttons[13] = bMult;
+        Buttons[14] = bDiv;
+        Buttons[15] = bMod;
+        Buttons[16] = bExp;
+        Buttons[17] = bAnd;
+        Buttons[18] = bOr;
+        Buttons[19] = bXOr;
+        Buttons[20] = bNot;
+        Buttons[21] = bOpenPar;
+        Buttons[22] = bClosePar;
+        Buttons[23] = bLeft;
+        Buttons[24] = bRight;
+        Buttons[25] = bCam;
+        Buttons[26] = bClr;
+        Buttons[27] = bDel;
 
         for (int i = 0; i < 28; i++) {
             Buttons[i].addActionListener(this);
@@ -144,7 +143,6 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
             Buttons[i].setFocusable(false);
             Buttons[i].setPreferredSize(new Dimension(80,80));
         }
-
         // PANEL SUPERIOR
         gbc.gridx=0;
         gbc.gridy=0;
@@ -158,7 +156,6 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
         gbc.gridy=1;
         gbc.gridwidth=5;
         panel.add(output,gbc);
-
 
         //FILA 1
         gbc.gridx=0;
@@ -240,18 +237,46 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
         gbc.gridx=4;
         panel.add(bDel,gbc);
 
+        historyPanel=new JPanel();
+        historyPanel.setLayout(new BorderLayout());
+        historyPanel.setPreferredSize(new Dimension(400,HEIGHT));
+        historyPanel.setBackground(Color.darkGray);
 
+        historyLablel=new JLabel("Historial");
+        historyLablel.setFont(font);
+        historyLablel.setForeground(Color.WHITE);
+        historyLablel.setHorizontalAlignment(JLabel.CENTER);
+        historyLablel.setPreferredSize(new Dimension(400,120));
+        historyPanel.add(historyLablel,BorderLayout.NORTH);
 
-        this.add(panel);
+        history= new JList<>();
+        listModel= new DefaultListModel<>();
+        history.setModel(listModel);
+        history.setPreferredSize(new Dimension(400,HEIGHT-120));
+        history.setBackground(Color.LIGHT_GRAY);
+        history.setForeground(Color.DARK_GRAY);
+        history.setFont(font);
+        historyScroll=new JScrollPane(history);
+        historyScroll.setPreferredSize(new Dimension(400,HEIGHT-120));
+        historyPanel.add(historyScroll, BorderLayout.SOUTH);
+
+        history.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                Respuesta selec= history.getSelectedValue();
+                input.setText(selec.getOp());
+                output.setText(selec.getResp());
+            }
+        });
+
+        this.add(panel,BorderLayout.WEST);
+        this.add(historyPanel,BorderLayout.EAST);
         this.pack();
         this.setVisible(true);
 
         Thread hilo = new Thread(this);
         hilo.start();
     }
-
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
          if (e.getSource().equals(bCam)){
@@ -270,12 +295,9 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
                              break;
                          }
                      }
-
-
                  }
              });
              espera.start();
-
         } else if (e.getSource().equals(bEqual)) {
              Solicitud solicitud=new Solicitud(clientIp,input.getText());
              try {
@@ -284,7 +306,16 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
                  throw new RuntimeException(ex);
              }
         } else if (e.getSource().equals(bDel)) {
-            input.setText(input.getText().substring(0,input.getText().length()-1));
+             int i = input.getCaretPosition();
+             int len= input.getText().length();
+             if (i==len) {
+                 input.setText(input.getText().substring(0,len-1));
+             }else if (i>0){
+                 String subS1 = input.getText().substring(0, i-1);
+                 String subS2 = input.getText().substring(i);
+                 input.setText(subS1.concat(subS2));
+                 input.setCaretPosition(i-1);
+             }
         } else if (e.getSource().equals(bClr)) {
             input.setText("");
         } else if (e.getSource().equals(bLeft)) {
@@ -300,7 +331,17 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
             }
         }else{
             JButton btn = (JButton) e.getSource();
-            input.setText(input.getText().concat(btn.getText()));
+
+            int i = input.getCaretPosition();
+            int len= input.getText().length();
+            if (i==len) {
+                input.setText(input.getText().concat(btn.getText()));
+            }else if (i>=0){
+                String subS1 = input.getText().substring(0, i);
+                String subS2 = input.getText().substring(i);
+                input.setText(subS1.concat(btn.getText()).concat(subS2));
+                input.setCaretPosition(i+1);
+            }
         }
     }
     @Override
@@ -311,15 +352,21 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
                 rRespuesta = recibirRespuesta.accept();
                 entrada = new ObjectInputStream(rRespuesta.getInputStream());
                 Respuesta respuesta = (Respuesta) entrada.readObject();
-
                 input.setText(respuesta.getOp());
                 output.setText(respuesta.getResp());
+
+                listModel.clear();
+                System.out.println(respuesta.getHistory().getSize());
+                Nodo current= respuesta.getHistory().getHead();
+                for (int i = 0; i < respuesta.getHistory().getSize(); i++) {
+                    System.out.println(current.getData().toString());
+                    listModel.addElement(current.getData());
+                    current=current.getNext();
+                }
                 rRespuesta.close();
             }
-
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
-
 }

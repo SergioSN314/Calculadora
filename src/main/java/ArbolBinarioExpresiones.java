@@ -157,7 +157,7 @@ public class ArbolBinarioExpresiones {
         op = Output_Queue.quitar();
         return op;
     }
-    public double EvaluaExpresion(){
+    public double evaluaExpresion(){
         return evalua(raiz);
     }
 

@@ -5,37 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto">
-    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Lista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Nodo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/history.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_10_2023_20_52__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Respuesta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Respuesta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/And.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Booleano.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Constante.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Division.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Exponenciacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ExpresionBooleana.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ExpresionConstante.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Multiplicacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Not.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Or.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Residuo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Resta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Suma.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Xor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Camara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Camara.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/op.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/op.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Calculadora$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Camara$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Camara.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Respuesta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Respuesta.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/op.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/op.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +45,6 @@
     &quot;assignee&quot;: &quot;SergioSN314&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="b2589672-6787-4068-89e9-9cf91a092623" />
-        <option name="url" value="https://github.com/SergioSN314/Calculadora.git" />
-      </UrlAndAccount>
-    </option>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/Calculadora.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -87,7 +67,6 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sergi/IdeaProjects/Prueba&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Program Files/opencv/build/java/x64&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -154,6 +133,10 @@
       <workItem from="1696882304192" duration="979000" />
       <workItem from="1697133139285" duration="7062000" />
       <workItem from="1697151581882" duration="7292000" />
+      <workItem from="1697262556429" duration="7255000" />
+      <workItem from="1697329283822" duration="617000" />
+      <workItem from="1697520201447" duration="3606000" />
+      <workItem from="1697593328156" duration="6521000" />
     </task>
     <task id="LOCAL-00001" summary="Union de main y master">
       <option name="closed" value="true" />
@@ -241,7 +224,6 @@
     <MESSAGE value="Configuracion de proyecto usando Maven" />
     <MESSAGE value="Reconocimiento de texto en una imagen con Tesseract OCR" />
     <MESSAGE value="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto" />
     <MESSAGE value="GUI de calculadora" />
     <MESSAGE value="Implementación de la camara usando OpenCV 4.8.0" />
     <MESSAGE value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
