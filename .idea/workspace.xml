@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Creacion completa de Arbol de expresiones, para expresiones numericas y booleanas, sin embargo, falta arreglar error de estructura del proyecto">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Rediseño de GUI y avance de JavaDoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Respuesta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Respuesta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/history.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/op.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/op.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Camara$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Camara.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Respuesta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Respuesta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/op.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/op.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,25 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/asb298/Progra/Calculadora&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Program Files/opencv/build/java/x64",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\resources\img" />
@@ -74,7 +85,7 @@
       <recent name="C:\Users\aleso\OneDrive\Documentos\Progra\Calculadora\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Servidor">
+  <component name="RunManager" selected="Application.Calculadora">
     <configuration name="Calculadora" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Calculadora" />
       <module name="Calculadora" />
@@ -98,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Servidor" />
         <item itemvalue="Application.Calculadora" />
+        <item itemvalue="Application.Servidor" />
         <item itemvalue="Application.ReconText" />
       </list>
     </recent_temporary>
@@ -194,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696730622418</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Rediseño de GUI y avance de JavaDoc">
+      <option name="closed" value="true" />
+      <created>1697750359630</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697750359630</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +238,7 @@
     <MESSAGE value="GUI de calculadora" />
     <MESSAGE value="Implementación de la camara usando OpenCV 4.8.0" />
     <MESSAGE value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
+    <MESSAGE value="Rediseño de GUI y avance de JavaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rediseño de GUI y avance de JavaDoc" />
   </component>
 </project>

@@ -1,8 +1,8 @@
 import java.io.Serializable;
 
 /**
- * Clase que para crear nodos para listas
- *
+ * Clase que para crear nodos para <code>Lista</code>
+ * @author Alejandro Solís Bolaños
  * @see Lista
  */
 public class Nodo implements Serializable {

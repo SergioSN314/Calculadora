@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 /**
  * Clase para crear a lista doblemente enlazada
- *
+ * @author Alejandro Solís Bolaños
  * @see Nodo
  */
 public class Lista implements Serializable {

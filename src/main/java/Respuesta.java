@@ -58,7 +58,7 @@ public class Respuesta implements Serializable {
           this.fecha = fecha;
      }
      public String toString(){
-         return String.format("%s = %s (%s)",this.getOp(),this.getResp(),this.getFecha());
+         return String.format("%s \t = \t %s \t (%s)",this.getOp(),this.getResp(),this.getFecha());
      }
 }
 

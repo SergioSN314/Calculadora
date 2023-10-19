@@ -4,8 +4,8 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.core.Core;
 
-
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -14,6 +14,7 @@ import java.io.File;
 
 /**
  * Clase que permite abrir la cámara y capturar una imágen usando OpenCV 4.8.0
+ * @author Alejandro Solís Bolaños
  */
 public class Camara extends JFrame implements ActionListener,Runnable {
     JLabel camaraScreen;
@@ -29,8 +30,6 @@ public class Camara extends JFrame implements ActionListener,Runnable {
     VideoCapture video;
     Mat image;
     public File foto;
-    String serverIp, clientIp;
-    int serverPort;
     public Thread camThread;
 
     /**
@@ -56,6 +55,7 @@ public class Camara extends JFrame implements ActionListener,Runnable {
 
     /**
      * Crea y actualiza constantemete la GUI con las imágees capturadas por OpenCV a través de la camara del dispositivo y guarda la imagen deseada
+     * @see org.opencv
      */
     @Override
     public void run() {
@@ -64,13 +64,18 @@ public class Camara extends JFrame implements ActionListener,Runnable {
         this.setLayout(null);
         this.setSize(WIDTH, HEIGHT);
         this.setVisible(true);
+        this.setBackground(new Color(0, 0, 0, 255));
 
         camaraScreen = new JLabel();
         camaraScreen.setBounds(0, 0, WIDTH, HEIGHT-100);
+        camaraScreen.setBackground(new Color(0, 0, 0, 255));
         this.add(camaraScreen);
 
         captura = new JButton("Capturar");
         captura.setBounds((WIDTH/2)-100, HEIGHT-100, 100, 50);
+        captura.setForeground(new Color(220, 220, 220, 255));
+        captura.setBackground(new Color(0, 31, 0, 255));
+        captura.setFocusable(false);
         captura.addActionListener(this);
         this.add(captura);
 
@@ -103,7 +108,6 @@ public class Camara extends JFrame implements ActionListener,Runnable {
 
         }
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(captura)) {

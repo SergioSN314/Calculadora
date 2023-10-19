@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.Serializable;
 /**
  * Clase para crear pauqetes de información que envia la <code>Calculadora</code> al <code>Servidor</code>
+ * @author Alejandro Solís Bolaños
  */
 public class Solicitud implements Serializable {
     private String ip,op;
