@@ -1,5 +1,10 @@
 import java.io.Serializable;
 
+/**
+ * Clase que para crear nodos para listas
+ *
+ * @see Lista
+ */
 public class Nodo implements Serializable {
     private Respuesta data;
     protected Nodo next;

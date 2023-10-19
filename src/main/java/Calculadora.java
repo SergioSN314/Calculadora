@@ -10,6 +10,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * Clase que crea la aplicación cliente de la calculadora
+ * @author Alejandro Solís Bolaños
+ * @author Sergio
+ */
 public class Calculadora extends JFrame implements ActionListener,Runnable {
     final int WIDTH = 1200;
     final int HEIGHT= 800;
@@ -32,8 +37,15 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
     DefaultListModel<Respuesta> listModel;
     JScrollPane historyScroll;
     Camara camara;
-    public static void main(String[] args) {new Calculadora();}
-    Calculadora(){
+
+    public static void main(String[] args) {new Calculadora(serverIp,serverPort);}
+
+    /**
+     * Constructor de la calculadora, genera la GUI y conecta con un <code>Servidor</code> con la IP y el puerto especificados en los parametros <code>serverIp</code> y <code>serverPort</code>
+     * @param serverIp <code>String</code> con la dirrecon IP del servidor al que se conectará la caculadora
+     * @param serverPort <code>int</code> con el número de puerto por el cual se conectará con el servidor
+     */
+    Calculadora(String serverIp, int serverPort){
         InetAddress localHost;
         try {
             localHost = InetAddress.getLocalHost();
@@ -280,7 +292,7 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
     @Override
     public void actionPerformed(ActionEvent e) {
          if (e.getSource().equals(bCam)){
-             camara= new  Camara(serverIp,serverPort,clientIp);
+             camara= new  Camara();
              Thread espera= new  Thread(new Runnable() {
                  @Override
                  public void run() {
@@ -299,51 +311,102 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
              });
              espera.start();
         } else if (e.getSource().equals(bEqual)) {
-             Solicitud solicitud=new Solicitud(clientIp,input.getText());
-             try {
-                 envio.writeObject(solicitud);
-             } catch (IOException ex) {
-                 throw new RuntimeException(ex);
-             }
+             equal();
+
         } else if (e.getSource().equals(bDel)) {
-             int i = input.getCaretPosition();
-             int len= input.getText().length();
-             if (i==len) {
-                 input.setText(input.getText().substring(0,len-1));
-             }else if (i>0){
-                 String subS1 = input.getText().substring(0, i-1);
-                 String subS2 = input.getText().substring(i);
-                 input.setText(subS1.concat(subS2));
-                 input.setCaretPosition(i-1);
-             }
+             delete();
+
         } else if (e.getSource().equals(bClr)) {
-            input.setText("");
+             clear();
+
         } else if (e.getSource().equals(bLeft)) {
-            try {
-                input.setCaretPosition(input.getCaretPosition()-1);
-            }catch (Exception ignored){
-            }
+             moveCaret("left");
 
         } else if (e.getSource().equals(bRight)) {
-            try {
-                input.setCaretPosition(input.getCaretPosition()+1);
-            }catch (Exception ignored){
-            }
+             moveCaret("right");
+
         }else{
             JButton btn = (JButton) e.getSource();
-
-            int i = input.getCaretPosition();
-            int len= input.getText().length();
-            if (i==len) {
-                input.setText(input.getText().concat(btn.getText()));
-            }else if (i>=0){
-                String subS1 = input.getText().substring(0, i);
-                String subS2 = input.getText().substring(i);
-                input.setText(subS1.concat(btn.getText()).concat(subS2));
-                input.setCaretPosition(i+1);
-            }
+            typeBtn(btn);
         }
     }
+
+    /**
+     * Escribe en el <code>JTextField</code> <code>input</code> el carácter correspondiente al botón presionado
+     *
+     * @param btn <code>JButton</code> presionado en la calculadora
+     */
+    private void typeBtn(JButton btn) {
+        int i = input.getCaretPosition();
+        int len= input.getText().length();
+        if (i==len) {
+            input.setText(input.getText().concat(btn.getText()));
+        }else if (i>=0){
+            String subS1 = input.getText().substring(0, i);
+            String subS2 = input.getText().substring(i);
+            input.setText(subS1.concat(btn.getText()).concat(subS2));
+            input.setCaretPosition(i+1);
+        }
+    }
+
+    /**
+     * Mueve el carrete del <code>JTextField</code> <code>input</code> hacia la dirección especificada por le parámetro dir
+     * @param dir Indica la dirección en la que se moverá el carrete
+     *            "right" = se mueve hacia la derecha
+     *            "left" = se mueve hacia la izquierda
+     */
+    private void moveCaret(String dir) {
+        try {
+            switch (dir) {
+                case "right":
+                    input.setCaretPosition(input.getCaretPosition()+1);
+                    break;
+                case "left":
+                    input.setCaretPosition(input.getCaretPosition()-1);
+                    break;
+            }
+        } catch (Exception ignored) {
+        }
+    }
+
+    /**
+     * Limpia el <code>JTextField</code> <code>input</code>
+     */
+    private void clear() {
+        input.setText("");
+    }
+
+    /**
+     * Borra el carácter anterior al carrete en el <code>JTextField</code> <code>input</code>
+     */
+    private void delete() {
+        int i = input.getCaretPosition();
+        int len= input.getText().length();
+        if (i==len) {
+            input.setText(input.getText().substring(0,len-1));
+        }else if (i>0){
+            String subS1 = input.getText().substring(0, i-1);
+            String subS2 = input.getText().substring(i);
+            input.setText(subS1.concat(subS2));
+            input.setCaretPosition(i-1);
+        }
+    }
+
+    /**
+     * Envia la operación especificada en el <code>JTextField</code> <code>input</code> al servidor para que sea procesada
+     */
+    private void equal() {
+        Solicitud solicitud=new Solicitud(clientIp,input.getText());
+        try {
+            envio.writeObject(solicitud);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    /**
+     * Matiene una conexión constante con el <code>Servior</code> y actualiza constantemente los elementos de la calculadora
+     */
     @Override
     public void run() {
         try {

@@ -1,17 +1,19 @@
 import java.io.Serializable;
 
+/**
+ * Clase para crea el paquete de datos que el <code>Servidor</code> envía a la <code>Calculadora</code>
+ */
 public class Respuesta implements Serializable {
      private String op;
      private String resp;
      private Lista history;
      private String fecha;
 
-     Respuesta(String op, String resp,Lista history) {
-          this.op = op;
-          this.resp = resp;
-          this.history=history;
-          this.fecha=null;
-     }
+     /**
+      * Constructor de <code>Respuesta</code>
+      * @param op operación evaluada por el servidor
+      * @param resp respuesa a la operación
+      */
      Respuesta(String op, String resp) {
           this.op = op;
           this.resp = resp;
@@ -19,6 +21,12 @@ public class Respuesta implements Serializable {
           this.fecha=null;
      }
 
+     /**
+      * Constructor de <code>Respuesta</code>, usada para crear entradas en el historial que se añaden a la <code>Lista</code> <code>history</code>
+      * @param op operación evaluada por el servidor
+      * @param resp respuesa a la operación
+      * @param fecha <code>String</code> que representa la fehca y hora a la que se hizo la solicitud que genera esta respuesta
+      */
      public Respuesta(String op, String resp, String fecha) {
           this.op = op;
           this.resp = resp;

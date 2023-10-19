@@ -34,16 +34,15 @@ public class Servidor implements Runnable{
             try {
                 Respuesta respuesta;
                 solicitud = (Solicitud) entrada.readObject();
-                System.out.println(solicitud.getImg());
                 String op;
                 String expresionModificada="";
                 if (solicitud.getImg()==null){
-//                    System.out.println(solicitud.getIp() + " solicita: "+ solicitud.getOp());
+                    System.out.println(solicitud.getIp() + " solicita: "+ solicitud.getOp());
                     op= solicitud.getOp();
                     expresionModificada= modificarExp(op);
                     System.out.println(expresionModificada);
                 }else if (solicitud.getImg()!=null){
-//                    System.out.println("Imagen recibida de: "+ solicitud.getIp());
+                    System.out.println("Imagen recibida de: "+ solicitud.getIp());
                     solicitud.setOp(new ReconText(solicitud.getImg()).getText());
                     op= solicitud.getOp();
                     expresionModificada= modificarExp(op);

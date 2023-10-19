@@ -1,4 +1,10 @@
 import java.io.Serializable;
+
+/**
+ * Clase para crear a lista doblemente enlazada
+ *
+ * @see Nodo
+ */
 public class Lista implements Serializable {
     protected Nodo head;
     protected Nodo last;

@@ -12,6 +12,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 
+/**
+ * Clase que permite abrir la cámara y capturar una imágen usando OpenCV 4.8.0
+ */
 public class Camara extends JFrame implements ActionListener,Runnable {
     JLabel camaraScreen;
     JButton captura;
@@ -30,7 +33,10 @@ public class Camara extends JFrame implements ActionListener,Runnable {
     int serverPort;
     public Thread camThread;
 
-    public Camara(String serverIp, int serverPort, String clientIp) {
+    /**
+     * Constructor de la Cámara
+     */
+    public Camara() {
         camThread = new Thread(this);
         camThread.start();
         this.addWindowListener(new WindowAdapter() {
@@ -45,11 +51,12 @@ public class Camara extends JFrame implements ActionListener,Runnable {
             }
         });
         this.foto = null;
-        this.serverIp = serverIp;
-        this.clientIp = clientIp;
-        this.serverPort = serverPort;
 
     }
+
+    /**
+     * Crea y actualiza constantemete la GUI con las imágees capturadas por OpenCV a través de la camara del dispositivo y guarda la imagen deseada
+     */
     @Override
     public void run() {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -57,7 +64,6 @@ public class Camara extends JFrame implements ActionListener,Runnable {
         this.setLayout(null);
         this.setSize(WIDTH, HEIGHT);
         this.setVisible(true);
-        System.out.println(Core.VERSION);
 
         camaraScreen = new JLabel();
         camaraScreen.setBounds(0, 0, WIDTH, HEIGHT-100);
