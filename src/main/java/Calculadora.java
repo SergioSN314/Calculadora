@@ -473,7 +473,14 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
      */
     private void actualizar(Respuesta respuesta) {
         input.setText(respuesta.getOp());
-        output.setText(respuesta.getResp());
+        if (respuesta.getResp().equals("ERROR")){
+            output.setForeground(new Color(162, 0, 0));
+            output.setText(respuesta.getResp());
+        }else {
+            output.setForeground(new Color(220, 220, 220));
+            output.setText(respuesta.getResp());
+        }
+
         if (respuesta.getHistory()!=null){
             listModel.clear();
             Nodo current= respuesta.getHistory().getHead();

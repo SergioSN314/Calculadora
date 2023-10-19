@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Rediseño de GUI y avance de JavaDoc">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Respuesta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Respuesta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/history.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/op.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/op.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Calculadora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Calculadora.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Camara$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Camara.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Camara.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Respuesta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Respuesta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servidor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/img/op.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/op.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697750359630</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Rediseño de GUI y avance de JavaDoc">
+      <option name="closed" value="true" />
+      <created>1697751203123</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697751203123</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
