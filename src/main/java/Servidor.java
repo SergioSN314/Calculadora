@@ -92,7 +92,7 @@ public class Servidor implements Runnable{
     }
 
     public static String modificarExp(String texto) {
-        return texto.replace("true", "T").replace("false","F").replace("^","x").replace("**","^").replace(" ","");
+        return texto.replace("^","x").replace("**","^").replace(" ","");
     }
 
 }

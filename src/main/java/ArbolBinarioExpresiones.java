@@ -157,18 +157,18 @@ public class ArbolBinarioExpresiones {
         op = Output_Queue.quitar();
         return op;
     }
-    public double evaluaExpresion(){
+    public int evaluaExpresion(){
         return evalua(raiz);
     }
 
-    private double evalua(NodoArbol subArbol){
-        double acum=0;
+    private int evalua(NodoArbol subArbol){
+        int acum=0;
         if(!esOperador(subArbol.dato.toString().charAt(0))){
-            return Double.parseDouble(subArbol.dato.toString());
+            return Integer.parseInt(subArbol.dato.toString());
         }else {
             switch ((subArbol.dato.toString().charAt(0))) {
                 case '^':
-                    acum = acum + Math.pow(evalua(subArbol.izquierdo), evalua(subArbol.derecho));
+                    acum = acum + (int) Math.pow(evalua(subArbol.izquierdo), evalua(subArbol.derecho));
                     break;
                 case '*':
                     acum = acum + evalua(subArbol.izquierdo) * evalua(subArbol.derecho);
