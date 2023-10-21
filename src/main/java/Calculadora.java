@@ -22,7 +22,7 @@ public class Calculadora extends JFrame implements ActionListener,Runnable {
     final int WIDTH = 1200;
     final int HEIGHT= 800;
     private String clientIp;
-    public static String serverIp = "192.168.1.72";
+    public static String serverIp = "172.18.71.0";
     public static int serverPort = 9999;
     protected Socket enviarSolicitud;
     protected ObjectOutputStream envio;
