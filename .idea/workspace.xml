@@ -4,14 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Rediseño de GUI y avance de JavaDoc">
+    <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="JavaDoc generada">
+      <change afterPath="$PROJECT_DIR$/JavaDoc/ArbolBinarioExpresiones.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Calculadora.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Camara.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Lista.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Nodo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/NodoArbol.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/NodoPila.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/PilaArbolExp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/ReconText.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Respuesta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Servidor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Solicitud.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/copy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/jquery.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/jqueryUI.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/module-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-3.6.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/search-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/tag-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/type-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NodoArbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NodoArbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NodoPila.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NodoPila.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PilaArbolExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PilaArbolExp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/history.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ArbolBinarioExpresiones.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ArbolBinarioExpresiones.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/NodoArbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/NodoArbol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/NodoPila.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/NodoPila.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PilaArbolExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PilaArbolExp.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +116,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Program Files/opencv/build/java/x64",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -207,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697750359630</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Version 1.0">
+      <option name="closed" value="true" />
+      <created>1697937487697</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697937487697</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +301,8 @@
     <MESSAGE value="Implementación de la camara usando OpenCV 4.8.0" />
     <MESSAGE value="Implementacion de servidor y cliente por medio de sockets, aun tiene fallos" />
     <MESSAGE value="Rediseño de GUI y avance de JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rediseño de GUI y avance de JavaDoc" />
+    <MESSAGE value="Version 1.0" />
+    <MESSAGE value="JavaDoc generada" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc generada" />
   </component>
 </project>
