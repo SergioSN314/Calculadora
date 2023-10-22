@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33489f28-c24a-48c3-b84a-f75d49e51937" name="Changes" comment="Rediseño de GUI y avance de JavaDoc">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArbolBinarioExpresiones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/NodoArbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NodoArbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/NodoPila.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NodoPila.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PilaArbolExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PilaArbolExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/history.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "last_opened_file_path": "C:/Program Files/opencv/build/java/x64",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -202,15 +207,7 @@
       <option name="project" value="LOCAL" />
       <updated>1697750359630</updated>
     </task>
-    <task id="LOCAL-00010" summary="Rediseño de GUI y avance de JavaDoc">
-      <option name="closed" value="true" />
-      <created>1697751203123</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1697751203123</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
